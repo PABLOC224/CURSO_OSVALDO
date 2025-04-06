@@ -1,57 +1,50 @@
-//console.log("hola mundo")
-/*
-ggggg
-gggggg */
 
 
 
-let nombre = "hola"
-console.log("🚀 ~ nombre:", nombre)
-let edad 
-console.log("🚀 ~ edad:", edad)
-dni = 12345555
-console.log(dni)
 
-edad = 40
-edad= 2344555
-console.log(edad)
-
-const pi = 3.14
-
-let srt = "hola equipo"
-
-console.log(typeof {}); // "object" (un objeto común)
-console.log(typeof []); // "object" (un array es técnicamente un objeto en JavaScript)
-console.log(typeof function(){}); // "function" (las funciones tienen su propio tipo)
-
-console.log(typeof srt == "string")
-
-let bool = false
-
-if(bool){
-    console.log("verdadero")
+console.log(decirHola("pedro"))
+ 
+function decirHola( nombre) {
+    return `hola ${nombre}` ;
 }
 
-let nulo = null 
-console.log(nulo)
+const saludar = decirHola
 
-const persona= {nombre : "pablo ",
-  apellido : "canseco" ,
-   calcular: function(){
-     return 2+2 ;
-   }
-   
-}
+console.log(saludar("pablo"))
 
+  let saludar2 = function(nombre){
+           return nombre ;
+ }
 
+ console.log(saludar2)
 
+ //arrow function
 
-persona.dni = 23014889
+ 
 
+ 
 
+ const sumar=(a,b) => {
+    console.log(a + b)
+ }
+ sumar(3,8)
 
-console.log(typeof(persona.nombre))
+ // formas de las arrow function 
 
-const array = ["objeto1", [1,2,3], {}, 1]
+ const sayHello= nombre => console.log(`hola ${nombre}`)
 
-console.log(array[1][2])
+ console.log(sayHello("jorge")) 
+
+ const sayHello2 = (nombre , nombre2)=> console.log(`hola ${nombre}  ${nombre2}`)
+
+ sayHello2("pablo", "canseco")
+
+ const sayHello3 =(nombre , nombre2)=> `hola ${nombre}  ${nombre2}`
+
+ console.log(sayHello3("jorge", "luis"))
+
+ const sayHello4 = (nombre, nombre2 )=> {
+     return `hola ${nombre}  ${nombre2}`
+ }
+
+ console.log(sayHello4("matias", "perez"))
