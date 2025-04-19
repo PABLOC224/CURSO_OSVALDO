@@ -115,3 +115,22 @@ console.log(objeto)
 
 console.log(parse)
 
+const datosJSON = [0,2,5,8,9]
+
+const Json = JSON.stringify(datosJSON)
+
+console.log("Xxxxxxxxxx")
+
+console.log(Json)
+
+Json[10] = 345899
+
+console.log(Json)
+
+
+const objetoNuevo = JSON.parse(JSON.stringify(datosJSON))
+
+objetoNuevo[10] = 3456
+
+console.log(objetoNuevo)
+console.log(datosJSON)
