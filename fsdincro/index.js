@@ -1,5 +1,6 @@
 import {readFileSync} from 'node:fs';
 import { writeFileSync } from 'node:fs';
+import { appendFileSync } from 'node:fs';
 
 const read = () => {
     
@@ -7,26 +8,29 @@ const read = () => {
        return  readFileSync("./fsdincro/archivo.txt","utf-8") 
 
     }catch(error) {
-        return error.message
+       
         console.log(error.message)
+        return error.message
     }
     
 }
 
-console.log(read())  
+
 
 const escribir = function() {
       writeFileSync("./fsdincro/archivo.txt","que tal")
 
+    }
 
+
+
+const agregarArchivo = function() {
+         appendFileSync("./fsdincro/archivo.txt", "\notra anotacion")
 
 }
-
-read
-
-
- 
-
+escribir()
+agregarArchivo()
+console.log(read())
 
 
 
