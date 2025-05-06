@@ -33,6 +33,25 @@ agregarArchivo()
 console.log(read())
 
 
+const modificarArchivo = () => {
+        
+         const objeto =JSON.parse(readFileSync("./package.json","utf-8"))
+         if(!objeto.scripts){
+             objeto.scripts= {}
+        }
+            objeto.scripts.nuevo_script = "echo 'Este es un nuevo script'"; 
+            writeFileSync("./package.json",JSON.stringify(objeto,null,2))
+   
+        }
+          
+         
+             
+
+
+modificarArchivo()
+
+
+
 
 
 
