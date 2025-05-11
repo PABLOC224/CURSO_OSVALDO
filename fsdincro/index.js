@@ -1,11 +1,14 @@
-import {readFileSync} from 'node:fs';
-import { writeFileSync } from 'node:fs';
+
+
+import { error } from 'node:console';
 import { appendFileSync } from 'node:fs';
+import fs from "node:fs";
+
 
 const read = () => {
     
     try{
-       return  readFileSync("./fsdincro/archivo.txt","utf-8") 
+       return  fs.readFileSync("./fsdincro/archivo.txt","utf-8") 
 
     }catch(error) {
        
@@ -18,7 +21,7 @@ const read = () => {
 
 
 const escribir = function() {
-      writeFileSync("./fsdincro/archivo.txt","que tal")
+      fs.writeFileSync("./fsdincro/archivo.txt","que tal")
 
     }
 
@@ -35,12 +38,12 @@ console.log(read())
 
 const modificarArchivo = () => {
         
-         const objeto =JSON.parse(readFileSync("./package.json","utf-8"))
+         const objeto =JSON.parse(fs.readFileSync("./package.json","utf-8"))
          if(!objeto.scripts){
              objeto.scripts= {}
         }
             objeto.scripts.nuevo_script = "echo 'Este es un nuevo script'"; 
-            writeFileSync("./package.json",JSON.stringify(objeto,null,2))
+            fs.writeFileSync("./package.json",JSON.stringify(objeto,null,2))
    
         }
           
@@ -54,16 +57,49 @@ modificarArchivo()
 
 
 
+const readed = ()=> {
+    try {
+    fs.readFile("./package.json","utf-8",(error,data)=> {
+       if(error)
+        throw error;
+        console.log(data) })
+       }catch(error){
+        console.log(error.message)}
+
+}
+
+
+
+readed()
+
+
+
+const promesa = ()=> {
+    
+    return fs.promises.readFile("./package.json", "utf8").then((data)=> console.log(data))
+    .catch (error=> console.log("errooo" ,error))
+
+}
+
+promesa()
+
+
+
+const asyncrona = async() => {
+      try {
+         const data = await  fs.promises.readFile("./package.json", "utf8")
+         console.log(data)
+      } catch(error) {
+          console.log("HORRROR", error)
+      }
+       
+}
+  console.log("mmmmmmmmmmmmmmmmmmmmmmmmm")
+    asyncrona()
 
 
 
 
-
-
-
-
-
-  
  
 
 
