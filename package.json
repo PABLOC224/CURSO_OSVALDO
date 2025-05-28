@@ -2,7 +2,7 @@
   "name": "curso_osvaldo",
   "version": "1.0.0",
   "description": "",
-  "main": "fsdincro/index.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,5 +11,8 @@
     "nuevo_script": "echo 'Este es un nuevo script'"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
